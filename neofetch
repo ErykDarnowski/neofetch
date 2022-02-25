@@ -934,6 +934,11 @@ EOF
 
 # DETECT INFORMATION
 
+draw_break() {
+    # call in config file inbetween lines to separate them
+    printf "\n"
+}
+
 get_os() {
     # $kernel_name is set in a function called cache_uname and is
     # just the output of "uname -s".
