@@ -939,6 +939,13 @@ draw_break() {
     printf "\n"
 }
 
+get_weather() {
+    # put 'info "Weather" weather' in config file to use
+    # prints weather for current location
+    weather=$(curl -s 'https://wttr.in/?format=%t+-+%C+(%l)&lang=en')
+    weather="${weather//+/}"
+}
+
 get_os() {
     # $kernel_name is set in a function called cache_uname and is
     # just the output of "uname -s".
